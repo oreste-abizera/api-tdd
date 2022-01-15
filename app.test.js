@@ -8,9 +8,10 @@ describe("Todos API", () => {
       .expect("Content-Type", /json/)
       .expect(200)
       .then((response) => {
-        expect(response.body).toEquals(
+        expect(response.body).toEqual(
           expect.arrayContaining([
             expect.objectContaining({
+              id: expect.any(Number),
               name: expect.any(String),
               completed: expect.any(Boolean),
             }),
@@ -25,8 +26,9 @@ describe("Todos API", () => {
       .expect("Content-Type", /json/)
       .expect(200)
       .then((response) => {
-        expect(response.body).toEquals(
+        expect(response.body).toEqual(
           expect.objectContaining({
+            id: expect.any(Number),
             name: expect.any(String),
             completed: expect.any(Boolean),
           })
@@ -45,8 +47,9 @@ describe("Todos API", () => {
       .expect("Content-Type", /json/)
       .expect(201)
       .then((response) => {
-        expect(response.body).toEquals(
+        expect(response.body).toEqual(
           expect.objectContaining({
+            id: expect.any(Number),
             name: "do dishes",
             completed: false,
           })
